@@ -7,6 +7,75 @@
     <title>neoPAT - Where Placement and Training Convenes</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        .key-features,
+        .benefits,
+        .testimonials,
+        .contact {
+            padding: 4rem 0;
+        }
+
+        .key-features h2,
+        .benefits h2,
+        .testimonials h2,
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .benefit-item:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .screenshot {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .screenshot img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        blockquote {
+            font-style: italic;
+            margin: 1rem 0;
+            padding-left: 1rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .contact ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .contact li {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+
+            .feature-grid,
+            .benefit-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         :root {
 
             --gradient-bg: linear-gradient(135deg, #ff758c 0%, #ff7eb3 50%, #6e8efb 100%);
@@ -357,7 +426,205 @@
                 transform: rotate(360deg);
             }
         }
-    </style>
+        .hero {
+    background: var(--gradient-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 80%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.stats {
+    background-color: #f4f6f9;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(74, 144, 226, 0.1) 0%, rgba(74, 144, 226, 0) 70%);
+    animation: wave 10s ease-in-out infinite alternate;
+}
+
+@keyframes wave {
+    0% { transform: translateX(-30%) translateY(-30%) rotate(0deg); }
+    100% { transform: translateX(30%) translateY(30%) rotate(360deg); }
+}
+
+.about {
+    background-color: #ffffff;
+    position: relative;
+}
+
+.about::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(74, 144, 226, 0.05) 0%, rgba(74, 144, 226, 0) 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.about:hover::after {
+    opacity: 1;
+}
+
+.features {
+    background-color: #f4f6f9;
+    position: relative;
+    overflow: hidden;
+}
+
+.features::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(45deg, rgba(74, 144, 226, 0.05) 0%, rgba(74, 144, 226, 0) 70%);
+    animation: rotate-reverse 30s linear infinite;
+}
+
+@keyframes rotate-reverse {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+.roadmap {
+    background-color: #ffffff;
+    position: relative;
+}
+
+.roadmap::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(74, 144, 226, 0.05) 0%, rgba(74, 144, 226, 0) 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+.roadmap:hover::before {
+    transform: scaleX(1);
+}
+
+.key-features {
+    background-color: #f4f6f9;
+    position: relative;
+    overflow: hidden;
+}
+
+.key-features::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(74, 144, 226, 0.1) 0%, rgba(74, 144, 226, 0) 70%);
+    animation: pulse 5s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.benefits {
+    background-color: #ffffff;
+    position: relative;
+}
+
+.benefits::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.05) 0%, rgba(74, 144, 226, 0) 70%);
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.benefits:hover::before {
+    transform: translateY(0);
+}
+
+.testimonials {
+    background-color: #f4f6f9;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(74, 144, 226, 0.1) 0%, rgba(74, 144, 226, 0) 70%);
+    animation: rotate 30s linear infinite;
+}
+
+.contact {
+    background-color: #ffffff;
+    position: relative;
+}
+
+.contact::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(74, 144, 226, 0.05) 0%, rgba(74, 144, 226, 0) 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.contact:hover::after {
+    opacity: 1;
+}
+section {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+section.animate {
+    transform: translateY(0);
+    opacity: 1;
+}
     </style>
 </head>
 
@@ -378,17 +645,17 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-card">
-                    <h2>30.5k+</h2>
+                    <h2><span class="counter" data-target="30.5">0</span><span class="symbol">k+</span></h2>
                     <p>STUDENTS</p>
                     <p>Successfully placed in their campus Day 1 Drive!</p>
                 </div>
                 <div class="stat-card">
-                    <h2>820k+</h2>
+                    <h2><span class="counter" data-target="820">0</span><span class="symbol">k+</span></h2>
                     <p>STUDENTS</p>
                     <p>Enrolled in neoPAT till date</p>
                 </div>
                 <div class="stat-card">
-                    <h2>10M+</h2>
+                    <h2><span class="counter" data-target="10">0</span><span class="symbol">M+</span></h2>
                     <p>ASSESSMENTS</p>
                     <p>Successfully completed using neoPAT Platform</p>
                 </div>
@@ -435,83 +702,222 @@
             </div>
         </div>
     </section>
-    <script>
-        // Loading animation
-        window.addEventListener('load', () => {
-            const loader = document.querySelector('.loader');
-            setTimeout(() => {
-                loader.classList.add('hide');
-            }, 1000);
+    <section class="key-features fade-in">
+        <div class="container">
+            <h2>Key Features of Neo PAT 2.0</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Student Database Management</h3>
+                    <p>Effortlessly manage and organize student data with our intuitive system.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Advanced Filtering</h3>
+                    <p>Quickly filter students based on eligibility criteria to find the perfect match for each
+                        placement opportunity.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Flexible Opt-in/Opt-out Options</h3>
+                    <p>Students can easily opt-in or opt-out of placements via WhatsApp or our mobile app, offering
+                        unmatched convenience.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Round-wise Selection Process</h3>
+                    <p>Streamline your selection process with clear stages and steps, ensuring a smooth and organized
+                        approach.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Real-time Notifications</h3>
+                    <p>Keep students informed at every stage with notifications sent via email, WhatsApp, and push
+                        notifications through our mobile app.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Document Management</h3>
+                    <p>Securely upload and manage offer letters and confirmation letters, with easy download options for
+                        future reference.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits fade-in">
+        <div class="container">
+            <h2>Why Choose Neo PAT 2.0?</h2>
+            <div class="benefit-grid">
+                <div class="benefit-item">
+                    <h3>Increased Efficiency</h3>
+                    <p>Automate and streamline your placement process to save valuable time and resources.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Enhanced Communication</h3>
+                    <p>Ensure timely updates and seamless communication with students.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Comprehensive Management</h3>
+                    <p>Access and manage all placement-related activities in one place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials fade-in">
+        <div class="container">
+            <h2>See Neo PAT 2.0 in Action</h2>
+            <div class="screenshot">
+                <img src="path_to_your_screenshot.jpg" alt="Neo PAT 2.0 Screenshot">
+            </div>
+            <h3>University Testimonials</h3>
+            <blockquote>
+                "Neo PAT 2.0 has transformed our placement process, making it more efficient and student-friendly." -
+                [University Name]
+            </blockquote>
+        </div>
+    </section>
+
+    <section class="contact fade-in">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>For more information or to schedule a demo, contact us at:</p>
+            <ul>
+                <li>Email: info@neopat.com</li>
+                <li>Phone: +91-123-456-7890</li>
+                <li>Website: www.neopat.com</li>
+            </ul>
+        </div>
+    </section>
+</body>
+<script>
+    // Loading animation
+    window.addEventListener('load', () => {
+        const loader = document.querySelector('.loader');
+        setTimeout(() => {
+            loader.classList.add('hide');
+        }, 1000);
+    });
+
+    // Fade-in animation for sections
+    const fadeElems = document.querySelectorAll('.fade-in');
+    const roadmap = document.querySelector('.roadmap-steps');
+    const steps = document.querySelectorAll('.step');
+
+    const fadeInObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                if (entry.target.classList.contains('roadmap-steps')) {
+                    setTimeout(() => {
+                        steps.forEach((step, index) => {
+                            setTimeout(() => {
+                                step.classList.add('active');
+                            }, index * 200);
+                        });
+                    }, 500);
+                }
+            }
         });
- 
-        // Fade-in animation for sections
-        const fadeElems = document.querySelectorAll('.fade-in');
-        const roadmap = document.querySelector('.roadmap-steps');
-        const steps = document.querySelectorAll('.step');
- 
-        const fadeInObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    if (entry.target.classList.contains('roadmap-steps')) {
-                        setTimeout(() => {
-                            steps.forEach((step, index) => {
-                                setTimeout(() => {
-                                    step.classList.add('active');
-                                }, index * 200);
-                            });
-                        }, 500);
-                    }
-                }
-            });
-        }, { threshold: 0.1 });
- 
-        fadeElems.forEach(elem => fadeInObserver.observe(elem));
-        fadeInObserver.observe(roadmap);
- 
-        // Animated counter for statistics
-        const statCards = document.querySelectorAll('.stat-card h2');
- 
-        const animateCounter = (target, start, end, duration) => {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                target.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
+    }, { threshold: 0.1 });
+
+    fadeElems.forEach(elem => fadeInObserver.observe(elem));
+    fadeInObserver.observe(roadmap);
+
+    // Animated counter for statistics
+    const statCards = document.querySelectorAll('.stat-card .counter');
+
+    const animateCounter = (target, start, end, duration) => {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const value = progress * (end - start) + start;
+            target.innerHTML = value.toLocaleString(undefined, { maximumFractionDigits: 1 });
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
         };
- 
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = entry.target;
-                    const end = parseInt(target.getAttribute('data-target'));
-                    animateCounter(target, 0, end, 2000);
-                    counterObserver.unobserve(target);
-                }
-            });
-        }, { threshold: 0.5 });
- 
-        statCards.forEach(card => {
-            const value = card.innerHTML;
-            card.innerHTML = '0';
-            card.setAttribute('data-target', value.replace(/[^0-9]/g, ''));
-            counterObserver.observe(card);
+        window.requestAnimationFrame(step);
+    };
+
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const end = parseFloat(target.getAttribute('data-target'));
+                animateCounter(target, 0, end, 2000);
+                counterObserver.unobserve(target);
+            }
         });
- 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+    }, { threshold: 0.5 });
+
+    statCards.forEach(card => {
+        card.innerHTML = '0';
+        counterObserver.observe(card);
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
             });
         });
+    });
+    // Animated entrance for feature and benefit items
+    const animateItems = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const itemObserver = new IntersectionObserver(animateItems, { threshold: 0.1 });
+
+    document.querySelectorAll('.feature-item, .benefit-item').forEach(item => {
+        item.classList.add('fade-in');
+        itemObserver.observe(item);
+    });
+
+    // Smooth scrolling for navigation
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Add active class to current section in navigation
+    const sections = document.querySelectorAll('section');
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                document.querySelector(`nav a[href="#${id}"]`).classList.add('active');
+            } else {
+                const id = entry.target.getAttribute('id');
+                document.querySelector(`nav a[href="#${id}"]`).classList.remove('active');
+            }
+        });
+    }, { threshold: 0.5 });
+
+    sections.forEach(section => navObserver.observe(section));
+    const animateSections = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
+        }
+    });
+};
+
+const sectionObserver = new IntersectionObserver(animateSections, { threshold: 0.1 });
+
+document.querySelectorAll('section').forEach(section => {
+    sectionObserver.observe(section);
+});
 </script>
 </body>
 
