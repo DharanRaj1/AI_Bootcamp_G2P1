@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>neoPAT - Where Placement and Training Convenes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+
+            --gradient-bg: linear-gradient(135deg, #ff758c 0%, #ff7eb3 50%, #6e8efb 100%);
+
+            --text-color: #333;
+
+            --light-text: #fff;
+
+            --accent-color: #4a90e2;
+
+        }
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+        body {
+
+            font-family: 'Poppins', sans-serif;
+
+            line-height: 1.6;
+
+            color: var(--text-color);
+
+        }
+
+        .container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 20px;
+
+        }
+
+        .hero {
+
+            background: var(--gradient-bg);
+
+            color: var(--light-text);
+
+            padding: 4rem 0;
+
+            text-align: left;
+
+        }
+
+        .hero h1 {
+
+            font-size: 3rem;
+
+            margin-bottom: 1rem;
+
+        }
+
+        .hero p {
+
+            font-size: 1.1rem;
+
+            max-width: 600px;
+
+            margin-bottom: 2rem;
+
+        }
+
+        .cta-button {
+
+            display: inline-block;
+
+            background-color: #000;
+
+            color: var(--light-text);
+
+            padding: 0.8rem 2rem;
+
+            border-radius: 5px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: background-color 0.3s ease;
+
+        }
+
+        .cta-button:hover {
+
+            background-color: #333;
+
+        }
+
+        .see-to-believe {
+
+            display: inline-block;
+
+            color: var(--light-text);
+
+            text-decoration: none;
+
+            margin-top: 1rem;
+
+        }
+
+        .stats {
+
+            background-color: #f4f6f9;
+
+            padding: 4rem 0;
+
+        }
+
+        .stats-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 2rem;
+
+        }
+
+        .stat-card {
+
+            background-color: white;
+
+            padding: 2rem;
+
+            border-radius: 8px;
+
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+            text-align: center;
+
+        }
+
+        .stat-card h2 {
+
+            font-size: 2.5rem;
+
+            color: var(--accent-color);
+
+            margin-bottom: 0.5rem;
+
+        }
+
+        .about {
+
+            padding: 4rem 0;
+
+        }
+
+        .features {
+
+            background-color: #f4f6f9;
+
+            padding: 4rem 0;
+
+        }
+
+        .features h2 {
+
+            text-align: center;
+
+            margin-bottom: 2rem;
+
+        }
+
+        .feature-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 2rem;
+
+        }
+
+        .feature-item {
+
+            background-color: white;
+
+            padding: 1.5rem;
+
+            border-radius: 8px;
+
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .roadmap {
+
+            padding: 4rem 0;
+
+        }
+
+        .roadmap h2 {
+
+            text-align: center;
+
+            margin-bottom: 2rem;
+
+        }
+
+        .roadmap-steps {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            position: relative;
+
+        }
+
+        .roadmap-steps::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: 50%;
+
+            left: 0;
+
+            right: 0;
+
+            height: 2px;
+
+            background-color: var(--accent-color);
+
+            z-index: -1;
+
+        }
+
+        .step {
+
+            background-color: white;
+
+            padding: 1rem;
+
+            border-radius: 50%;
+
+            width: 100px;
+
+            height: 100px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        }
+
+        /* Adding transitions and animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat-card {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+
+        .feature-item {
+            transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .roadmap-steps::before {
+            transition: width 1s ease-in-out;
+            width: 0;
+        }
+
+        .roadmap-steps.active::before {
+            width: 100%;
+        }
+
+        .step {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .step.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Add a loading animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .loader.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader::after {
+            content: '';
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <div class="loader"></div>
+    <section class="hero">
+        <div class="container">
+            <h1>Where Placement and Training Convenes!</h1>
+            <p>Synergize Placements & Training and scale up your placement numbers to a whole new level with Neo PAT-
+                Digital Placement Preparatory Toolkit.</p>
+            <a href="#" class="cta-button">GET ENLIGHTENED</a>
+            <br>
+            <a href="#" class="see-to-believe">SEE TO BELIEVE →</a>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h2>30.5k+</h2>
+                    <p>STUDENTS</p>
+                    <p>Successfully placed in their campus Day 1 Drive!</p>
+                </div>
+                <div class="stat-card">
+                    <h2>820k+</h2>
+                    <p>STUDENTS</p>
+                    <p>Enrolled in neoPAT till date</p>
+                </div>
+                <div class="stat-card">
+                    <h2>10M+</h2>
+                    <p>ASSESSMENTS</p>
+                    <p>Successfully completed using neoPAT Platform</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>About neoPAT</h2>
+            <p>neoPAT is a placement assessment and training tool, helping placement cells of any institution in
+                preparation and up-skilling of students and making them industry-ready.</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Unique Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>WhatsApp Integration</h3>
+                    <p>Seamless communication and updates through WhatsApp</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Comprehensive Assessment</h3>
+                    <p>Multi-faceted evaluation of student skills</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Real-time Analytics</h3>
+                    <p>Instant insights into student performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="roadmap">
+        <div class="container">
+            <h2>neoPAT Process Roadmap</h2>
+            <div class="roadmap-steps">
+                <div class="step">Step 1: Assessment</div>
+                <div class="step">Step 2: Training</div>
+                <div class="step">Step 3: Placement</div>
+                <div class="step">Step 4: Success</div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Loading animation
+        window.addEventListener('load', () => {
+            const loader = document.querySelector('.loader');
+            setTimeout(() => {
+                loader.classList.add('hide');
+            }, 1000);
+        });
+ 
+        // Fade-in animation for sections
+        const fadeElems = document.querySelectorAll('.fade-in');
+        const roadmap = document.querySelector('.roadmap-steps');
+        const steps = document.querySelectorAll('.step');
+ 
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    if (entry.target.classList.contains('roadmap-steps')) {
+                        setTimeout(() => {
+                            steps.forEach((step, index) => {
+                                setTimeout(() => {
+                                    step.classList.add('active');
+                                }, index * 200);
+                            });
+                        }, 500);
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+ 
+        fadeElems.forEach(elem => fadeInObserver.observe(elem));
+        fadeInObserver.observe(roadmap);
+ 
+        // Animated counter for statistics
+        const statCards = document.querySelectorAll('.stat-card h2');
+ 
+        const animateCounter = (target, start, end, duration) => {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                target.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        };
+ 
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const end = parseInt(target.getAttribute('data-target'));
+                    animateCounter(target, 0, end, 2000);
+                    counterObserver.unobserve(target);
+                }
+            });
+        }, { threshold: 0.5 });
+ 
+        statCards.forEach(card => {
+            const value = card.innerHTML;
+            card.innerHTML = '0';
+            card.setAttribute('data-target', value.replace(/[^0-9]/g, ''));
+            counterObserver.observe(card);
+        });
+ 
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+</script>
+</body>
+
+</html>
