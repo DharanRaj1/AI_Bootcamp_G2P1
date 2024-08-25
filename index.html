@@ -625,21 +625,30 @@ section.animate {
     transform: translateY(0);
     opacity: 1;
 }
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
+.video-wrapper {
     max-width: 100%;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
 }
 
-.video-container iframe {
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.video-container video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    object-fit: contain;
+}
+
+@media (min-width: 768px) {
+    .video-wrapper {
+        max-width: 80%; /* Adjust this value to control the maximum width of the video */
+    }
 }
     </style>
 </head>
@@ -768,13 +777,13 @@ section.animate {
     <section class="testimonials fade-in">
         <div class="container">
             <h2>See Neo PAT 2.0 in Action</h2>
-            <div class="video-container">
-                <iframe 
-                    src="https://ai.invideo.io/workspace/e6aae867-668c-4f10-9599-3ca73e6d8f3d/v20-copilot/5ab7398e-0e41-4b67-b402-a57bda063b2a" 
-                    frameborder="0" 
-                    allowfullscreen
-                    allow="autoplay; fullscreen">
-                </iframe>
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <video controls>
+                        <source src="AI Bootcamp product marketing video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
             <h3>University Testimonials</h3>
             <blockquote>
