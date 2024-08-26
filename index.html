@@ -426,231 +426,256 @@
                 transform: rotate(360deg);
             }
         }
+
         .hero {
-    background: var(--gradient-bg);
-    position: relative;
-    overflow: hidden;
-}
+            background: var(--gradient-bg);
+            position: relative;
+            overflow: hidden;
+        }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 80%);
-    animation: rotate 20s linear infinite;
-}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 80%);
+            animation: rotate 20s linear infinite;
+        }
 
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
 
-.stats {
-    background-color: #f4f6f9;
-    position: relative;
-    overflow: hidden;
-}
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
-.stats::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(74, 144, 226, 0.1) 0%, rgba(74, 144, 226, 0) 70%);
-    animation: wave 10s ease-in-out infinite alternate;
-}
+        .stats {
+            background-color: #f4f6f9;
+            position: relative;
+            overflow: hidden;
+        }
 
-@keyframes wave {
-    0% { transform: translateX(-30%) translateY(-30%) rotate(0deg); }
-    100% { transform: translateX(30%) translateY(30%) rotate(360deg); }
-}
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(74, 144, 226, 0.1) 0%, rgba(74, 144, 226, 0) 70%);
+            animation: wave 10s ease-in-out infinite alternate;
+        }
 
-.about {
-    background-color: #ffffff;
-    position: relative;
-}
+        @keyframes wave {
+            0% {
+                transform: translateX(-30%) translateY(-30%) rotate(0deg);
+            }
 
-.about::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 30% 70%, rgba(74, 144, 226, 0.05) 0%, rgba(74, 144, 226, 0) 70%);
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
+            100% {
+                transform: translateX(30%) translateY(30%) rotate(360deg);
+            }
+        }
 
-.about:hover::after {
-    opacity: 1;
-}
+        .about {
+            background-color: #ffffff;
+            position: relative;
+        }
 
-.features {
-    background-color: #f4f6f9;
-    position: relative;
-    overflow: hidden;
-}
+        .about::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(74, 144, 226, 0.05) 0%, rgba(74, 144, 226, 0) 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
 
-.features::before {
-    content: '';
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 300%;
-    height: 300%;
-    background: linear-gradient(45deg, rgba(74, 144, 226, 0.05) 0%, rgba(74, 144, 226, 0) 70%);
-    animation: rotate-reverse 30s linear infinite;
-}
+        .about:hover::after {
+            opacity: 1;
+        }
 
-@keyframes rotate-reverse {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(-360deg); }
-}
+        .features {
+            background-color: #f4f6f9;
+            position: relative;
+            overflow: hidden;
+        }
 
-.roadmap {
-    background-color: #ffffff;
-    position: relative;
-}
+        .features::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: linear-gradient(45deg, rgba(74, 144, 226, 0.05) 0%, rgba(74, 144, 226, 0) 70%);
+            animation: rotate-reverse 30s linear infinite;
+        }
 
-.roadmap::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to right, rgba(74, 144, 226, 0.05) 0%, rgba(74, 144, 226, 0) 100%);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.5s ease-in-out;
-}
+        @keyframes rotate-reverse {
+            0% {
+                transform: rotate(0deg);
+            }
 
-.roadmap:hover::before {
-    transform: scaleX(1);
-}
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
 
-.key-features {
-    background-color: #f4f6f9;
-    position: relative;
-    overflow: hidden;
-}
+        .roadmap {
+            background-color: #ffffff;
+            position: relative;
+        }
 
-.key-features::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 70% 30%, rgba(74, 144, 226, 0.1) 0%, rgba(74, 144, 226, 0) 70%);
-    animation: pulse 5s ease-in-out infinite alternate;
-}
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(74, 144, 226, 0.05) 0%, rgba(74, 144, 226, 0) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease-in-out;
+        }
 
-@keyframes pulse {
-    0% { opacity: 0.5; }
-    100% { opacity: 1; }
-}
+        .roadmap:hover::before {
+            transform: scaleX(1);
+        }
 
-.benefits {
-    background-color: #ffffff;
-    position: relative;
-}
+        .key-features {
+            background-color: #f4f6f9;
+            position: relative;
+            overflow: hidden;
+        }
 
-.benefits::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(74, 144, 226, 0.05) 0%, rgba(74, 144, 226, 0) 70%);
-    transform: translateY(-100%);
-    transition: transform 0.5s ease-in-out;
-}
+        .key-features::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(74, 144, 226, 0.1) 0%, rgba(74, 144, 226, 0) 70%);
+            animation: pulse 5s ease-in-out infinite alternate;
+        }
 
-.benefits:hover::before {
-    transform: translateY(0);
-}
+        @keyframes pulse {
+            0% {
+                opacity: 0.5;
+            }
 
-.testimonials {
-    background-color: #f4f6f9;
-    position: relative;
-    overflow: hidden;
-}
+            100% {
+                opacity: 1;
+            }
+        }
 
-.testimonials::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(74, 144, 226, 0.1) 0%, rgba(74, 144, 226, 0) 70%);
-    animation: rotate 30s linear infinite;
-}
+        .benefits {
+            background-color: #ffffff;
+            position: relative;
+        }
 
-.contact {
-    background-color: #ffffff;
-    position: relative;
-}
+        .benefits::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.05) 0%, rgba(74, 144, 226, 0) 70%);
+            transform: translateY(-100%);
+            transition: transform 0.5s ease-in-out;
+        }
 
-.contact::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(74, 144, 226, 0.05) 0%, rgba(74, 144, 226, 0) 70%);
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
+        .benefits:hover::before {
+            transform: translateY(0);
+        }
 
-.contact:hover::after {
-    opacity: 1;
-}
-section {
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    transform: translateY(20px);
-    opacity: 0;
-}
+        .testimonials {
+            background-color: #f4f6f9;
+            position: relative;
+            overflow: hidden;
+        }
 
-section.animate {
-    transform: translateY(0);
-    opacity: 1;
-}
-.video-wrapper {
-    max-width: 100%;
-    margin: 0 auto 2rem;
-}
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(74, 144, 226, 0.1) 0%, rgba(74, 144, 226, 0) 70%);
+            animation: rotate 30s linear infinite;
+        }
 
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
-    overflow: hidden;
-}
+        .contact {
+            background-color: #ffffff;
+            position: relative;
+        }
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
+        .contact::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(74, 144, 226, 0.05) 0%, rgba(74, 144, 226, 0) 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
 
-@media (min-width: 768px) {
-    .video-wrapper {
-        max-width: 80%; /* Adjust this value to control the maximum width of the video */
-    }
-}
+        .contact:hover::after {
+            opacity: 1;
+        }
+
+        section {
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        section.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .video-wrapper {
+            max-width: 100%;
+            margin: 0 auto 2rem;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (min-width: 768px) {
+            .video-wrapper {
+                max-width: 80%;
+                /* Adjust this value to control the maximum width of the video */
+            }
+        }
     </style>
 </head>
 
@@ -780,12 +805,10 @@ section.animate {
             <h2>See Neo PAT 2.0 in Action</h2>
             <div class="video-wrapper">
                 <div class="video-container">
-                    <iframe src="https://examly467-my.sharepoint.com/personal/dharan_raj_iamneo_ai/_layouts/15/embed.aspx?UniqueId=d552ee10-dec8-42e4-b1d4-1f4974c92289&embed=%7B%22af%22%3Atrue%2C%22hvm%22%3Atrue%2C%22ust%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" 
-                            frameborder="0" 
-                            scrolling="no" 
-                            allowfullscreen 
-                            title="AI Bootcamp product marketing video.mp4">
-                    </iframe>
+                    <iframe
+                        src="https://examly467-my.sharepoint.com/personal/dharan_raj_iamneo_ai/_layouts/15/embed.aspx?UniqueId=d552ee10-dec8-42e4-b1d4-1f4974c92289&embed=%7B%22hvm%22%3Atrue%2C%22ust%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create"
+                        width="640" height="360" frameborder="0" scrolling="no" allowfullscreen
+                        title="AI Bootcamp product marketing video.mp4"></iframe>
                 </div>
             </div>
             <h3>University Testimonials</h3>
@@ -928,19 +951,19 @@ section.animate {
 
     sections.forEach(section => navObserver.observe(section));
     const animateSections = (entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-            observer.unobserve(entry.target);
-        }
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const sectionObserver = new IntersectionObserver(animateSections, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => {
+        sectionObserver.observe(section);
     });
-};
-
-const sectionObserver = new IntersectionObserver(animateSections, { threshold: 0.1 });
-
-document.querySelectorAll('section').forEach(section => {
-    sectionObserver.observe(section);
-});
 </script>
 </body>
 
